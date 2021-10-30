@@ -1,0 +1,55 @@
+﻿<Window x:Class="Catalog.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Catalog"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="220.444" Width="288.301" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="forest.jpg"/>
+    </Window.Background>
+    <Window.BorderBrush>
+        <ImageBrush ImageSource="forest.jpg"/>
+    </Window.BorderBrush>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="0.3*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Логин" Grid.Column="1" Grid.Row="1" Foreground="Black" OpacityMask="#FFFFCFCF" TextAlignment="Right" />
+        <TextBox x:Name="LogintextBox" Grid.Column="3" Grid.Row="1" KeyDown="LogintextBox_KeyDown" />
+
+        <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="3" TextAlignment="Right" />
+        <PasswordBox x:Name="PasswordBox" Grid.Column="3" Grid.Row="3" KeyDown="PasswordBox_KeyDown" />
+
+        <Label x:Name="warningLabel" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3"
+               Content="Неверный логин или пароль." FontFamily="Arial" FontSize="10" Foreground="Red" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label.Background>
+                <SolidColorBrush Color="White" Opacity="0.7"/>
+            </Label.Background>
+        </Label>
+
+        <Button x:Name="loginButton" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" 
+                Content="Войти" Margin="0,5"
+                Background="#FF2FFF31" Click="LoginButton_Click"/>
+        <Button x:Name="registrationButton" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3"
+                Content="Регистрация" Margin="0,5"
+                Background="Yellow" Click="RegistrationButton_Click"/>
+
+    </Grid>
+</Window>

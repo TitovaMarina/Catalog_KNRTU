@@ -1,0 +1,100 @@
+﻿<Window x:Class="Catalog.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Catalog"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="300" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <ControlTemplate x:Key="validationFailed">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Red" BorderThickness="2">
+                    <AdornedElementPlaceholder />
+                </Border>
+                <TextBlock Foreground="Violet" FontSize="16" FontWeight="Bold">!</TextBlock>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="0.3*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Имя" Grid.Column="1" Grid.Row="1" />
+        <TextBox x:Name="NameTextBox" Grid.Column="3" Grid.Row="1" 
+                 Margin="0,5" MaxLength="50" Validation.ErrorTemplate="{StaticResource validationFailed}" >
+            <TextBox.Text>
+                <Binding Path="Name">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock Text="Фамилия" Grid.Column="1" Grid.Row="2" />
+        <TextBox x:Name="LastNameTextBox" Grid.Column="3" Grid.Row="2" 
+                 Margin="0,5" MaxLength="50" Validation.ErrorTemplate="{StaticResource validationFailed}" >
+            <TextBox.Text>
+                <Binding Path="LastName">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        
+        <TextBlock Text="Дата рождения" Grid.Column="1" Grid.Row="3" />
+        <DatePicker x:Name="date" Grid.Column="3" Grid.Row="3" />
+        
+        <TextBlock Text="Логин" Grid.Column="1" Grid.Row="4" />
+        <TextBox x:Name="LoginTextBox" Grid.Column="3" Grid.Row="4" 
+                 Margin="0,5" MaxLength="50" Validation.ErrorTemplate="{StaticResource validationFailed}" >
+            <TextBox.Text>
+                <Binding Path="Login">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        
+        <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="5" />
+        <TextBox x:Name="PasswordTextBox" Grid.Column="3" Grid.Row="5" 
+                 Margin="0,5" MaxLength="50" Validation.ErrorTemplate="{StaticResource validationFailed}" >
+            <TextBox.Text>
+                <Binding Path="Password">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button x:Name="registrationButton" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" 
+                Content="Зарегистрироваться" Margin="0,5"
+                Background="#FF6AFF6A" Click="RegistrationButton_Click"/>
+        <Button x:Name="CancelButton" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3"
+                Content="Отмена" Margin="0,5"
+                Background="#FFFF5E5E" Click="CancelButton_Click" />
+        
+    </Grid>
+</Window>

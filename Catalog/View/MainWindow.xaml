@@ -1,0 +1,122 @@
+﻿<Window x:Class="Catalog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Catalog"
+        mc:Ignorable="d"
+        Title="Главное окно" Height="574.415" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Menu x:Name="menuMainWindow" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"
+              Background="#FFDCEDFF" >
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="Меню">
+                <MenuItem x:Name="LoginMenuItem" Header="Войти под другим логином" Click="LoginMenuItem_Click" ></MenuItem>
+                <Separator />
+                <MenuItem x:Name="ExitMenuItem" Header="Выход" Click="ExitMenuItem_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="UserLogin" Header="" Margin="5,0" HorizontalAlignment="Right"/>
+        </Menu>
+
+
+        <!--<Button x:Name="findButton" Grid.Column="6" Grid.Row="1" 
+                Margin="0, 5" Padding="5" Content="Поиск"/>
+        --><!--<Button x:Name="createSubTypeButton" Grid.Column="6" Grid.Row="2" 
+                Margin="0, 0, 0, 5" Padding="5" Content="Создать подтип" Command="{Binding AddCommand}" />--><!--
+        <TextBlock Grid.Column="3" Grid.Row="1" 
+                   Margin="0, 10" Text="Найти:"/>
+        <TextBox x:Name="searchingTextBox" Grid.Column="5" Grid.Row="1"
+                 Margin="10, 5"/>-->
+
+        <!--Body-->
+        <!--Left ListBox for Types-->
+        <!--<ListBox x:Name="entitiesListBox" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" 
+                 SelectedItem="{Binding SelectedEntity}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock x:Name="entityItemTextBlock" FontSize="18" Text="{Binding EntityName}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
+
+        <ListView x:Name="entitiesListBox" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" 
+                 SelectedItem="{Binding SelectedEntity}">
+            <ListView.View>
+                <GridView x:Name="EntityGridView" >
+                    <GridViewColumn Header="Список сущностей">
+                        <GridViewColumn.CellTemplate >
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=EntityName}" TextWrapping="Wrap" Margin="2" 
+                                            Foreground="Black" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <!--Right ListBox for SubTypes SelectedItem="{Binding SelectedPhone}"-->
+        <ListBox Grid.Column="3" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="4" 
+                 x:Name="instancesListBox" SelectedItem="{Binding SelectedDocument}">
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="Margin" Value="0,1" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock FontSize="18" Margin="20, 0" Text="{Binding AnnotationFields, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="4" Orientation="Horizontal" Margin="0,5,0,0" HorizontalAlignment="Center">
+            <!--<Button x:Name="add_doc_button" Content="Добавить" Padding="20,0" Margin="20,0" Background="#FF00FF8B" />-->
+            <Button Content="Добавить" Padding="20,0" Margin="10,0" Width="100" Command="{Binding AddCommand}" Background="#FF00D11C"/>
+            <Button Content="Изменить" Padding="10,0" Margin="20,0" Width="100" Command="{Binding EditCommand}"
+                    CommandParameter="{Binding ElementName=instancesList, Path=SelectedDocument}" Background="#FF96CFFF"  />
+            <Button Content="Удалить" Padding="10,0" Margin="20,0" Width="100" Command="{Binding DeleteCommand}"
+                    CommandParameter="{Binding ElementName=instancesList, Path=SelectedDocument}" Background="#FFFF6F4F"  />
+        </StackPanel>
+        <!--Footer-->
+        <Button x:Name="createTypeButton" Grid.Column="1" Grid.Row="4" 
+                Margin="0, 10, 0, 0" Width="140" Padding="5" Content="Создать тип" Click="CreateTypeButton_Click"/>
+
+    </Grid>
+</Window>

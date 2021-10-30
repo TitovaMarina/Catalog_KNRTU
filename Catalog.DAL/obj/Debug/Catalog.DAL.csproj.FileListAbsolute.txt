@@ -1,0 +1,16 @@
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\Catalog.DAL.dll.config
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\Catalog.DAL.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\Catalog.DAL.pdb
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\obj\Debug\Catalog.DAL.csproj.AssemblyReference.cache
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\obj\Debug\Catalog.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\obj\Debug\Catalog.DAL.csproj.CopyComplete
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\obj\Debug\Catalog.DAL.dll
+C:\Users\Марина\source\repos\Catalog_KNRTU\Catalog.DAL\obj\Debug\Catalog.DAL.pdb
