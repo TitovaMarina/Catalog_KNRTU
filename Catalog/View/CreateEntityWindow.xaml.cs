@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using Catalog.DAL.Model;
 using Catalog.DAL.DataBase;
 using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace Catalog
 {

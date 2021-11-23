@@ -24,19 +24,33 @@ namespace Catalog
         public CreateInstanceOfEntityWindow(string tableTitle, string userLogin)
         {
             InitializeComponent();
-            docViewModel = new DocumentViewModel(userLogin);
-            _tableTitle = tableTitle;
-            var data = docViewModel.GetFieldsList(tableTitle);
-            this.FieldsList.ItemsSource = data;
+            try
+            {
+                docViewModel = new DocumentViewModel(userLogin);
+                _tableTitle = tableTitle;
+                var data = docViewModel.GetFieldsList(tableTitle);
+                this.FieldsList.ItemsSource = data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public CreateInstanceOfEntityWindow(DocumentView document, string userLogin)
         {
             InitializeComponent();
-            docViewModel = new DocumentViewModel(userLogin);
-            _tableTitle = document.EntityName;
-            var data = docViewModel.GetDocumentByID(document.EntityName, document.DocumentID);
-            this.FieldsList.ItemsSource = data;
+            try
+            {
+                docViewModel = new DocumentViewModel(userLogin);
+                _tableTitle = document.EntityName;
+                var data = docViewModel.GetDocumentByID(document.EntityName, document.DocumentID);
+                this.FieldsList.ItemsSource = data;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)

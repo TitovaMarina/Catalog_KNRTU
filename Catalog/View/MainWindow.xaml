@@ -39,14 +39,19 @@
                 <Separator />
                 <MenuItem x:Name="ExitMenuItem" Header="Выход" Click="ExitMenuItem_Click" ></MenuItem>
             </MenuItem>
+            <!--<MenuItem x:Name="TextLabel" Header="Время использования приложения: " Margin="5,0" HorizontalAlignment="Right" Foreground="#FFBF00B2"/>
+            <MenuItem x:Name="TimeLabel" Header="" Margin="5,0" HorizontalAlignment="Right" Foreground="#FFBF00B2"/>-->
             <MenuItem x:Name="UserLogin" Header="" Margin="5,0" HorizontalAlignment="Right"/>
+
         </Menu>
 
 
         <!--<Button x:Name="findButton" Grid.Column="6" Grid.Row="1" 
                 Margin="0, 5" Padding="5" Content="Поиск"/>
-        --><!--<Button x:Name="createSubTypeButton" Grid.Column="6" Grid.Row="2" 
-                Margin="0, 0, 0, 5" Padding="5" Content="Создать подтип" Command="{Binding AddCommand}" />--><!--
+        -->
+        <!--<Button x:Name="createSubTypeButton" Grid.Column="6" Grid.Row="2" 
+                Margin="0, 0, 0, 5" Padding="5" Content="Создать подтип" Command="{Binding AddCommand}" />-->
+        <!--
         <TextBlock Grid.Column="3" Grid.Row="1" 
                    Margin="0, 10" Text="Найти:"/>
         <TextBox x:Name="searchingTextBox" Grid.Column="5" Grid.Row="1"
@@ -86,9 +91,14 @@
             </ListView.ItemContainerStyle>
         </ListView>
 
+
+        <!--<MenuItem x:Name="TextLabel" Header="Время использования приложения: " Margin="5,0" HorizontalAlignment="Right" Foreground="#FFBF00B2"/>
+            <MenuItem x:Name="TimeLabel" Header="" Margin="5,0" HorizontalAlignment="Right" Foreground="#FFBF00B2"/>-->
+        <!--<Label Name="textLabel" Content="Время использования приложения: " FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFBF00B2"/>
+        <Label Name="timeLabel" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
         <!--Right ListBox for SubTypes SelectedItem="{Binding SelectedPhone}"-->
-        <ListBox Grid.Column="3" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="4" 
-                 x:Name="instancesListBox" SelectedItem="{Binding SelectedDocument}">
+        <ListBox Grid.Column="3" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="5" 
+                 x:Name="instancesListBox" SelectedItem="{Binding SelectedDocument}" Margin="0.4,29.6,19.6,0">
 
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
@@ -117,6 +127,8 @@
         <!--Footer-->
         <Button x:Name="createTypeButton" Grid.Column="1" Grid.Row="4" 
                 Margin="0, 10, 0, 0" Width="140" Padding="5" Content="Создать тип" Click="CreateTypeButton_Click"/>
+        <Label x:Name="textLabel" Content="Время использования приложения: " Grid.Column="5" Foreground="#FFBF00B2" HorizontalAlignment="Center" Margin="64.4,30,0,0" VerticalAlignment="Top" Grid.RowSpan="4"/>
+        <Label x:Name="timeLabel" Grid.Column="5" Content="___" FontSize="12" Foreground="#FFBF00B2" HorizontalAlignment="Left" Margin="380.4,1.6,0,0" Grid.Row="3" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
