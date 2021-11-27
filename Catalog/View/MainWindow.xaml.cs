@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,7 +13,7 @@ namespace Catalog
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<DocumentView> _data;
+        //ObservableCollection<DocumentView> _data;
         static DateTime spentTime = new DateTime();
         //Database db;
         EntitiesViewModel entityViewModel;
@@ -110,7 +109,7 @@ namespace Catalog
                 createEntityWindow.Owner = this;
 
                 createEntityWindow.ShowDialog();
-                Entities = entityViewModel.GetEntities().ToList();
+                Entities = entityViewModel.GetEntities().OrderBy(x => x.EntityName).ToList();
                 this.entitiesListBox.ItemsSource = Entities;
             }
             catch (Exception ex)

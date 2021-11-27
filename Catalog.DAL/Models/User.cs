@@ -1,13 +1,5 @@
 ﻿using Catalog.DAL.DataBase;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.SQLite;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Catalog.DAL.Model
 {

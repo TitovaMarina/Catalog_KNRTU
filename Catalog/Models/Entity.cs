@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Catalog
@@ -19,7 +17,6 @@ namespace Catalog
         {
             
         }
-        //public int ID_Entity { get; set; }
 
         private string entityName;
         private string annotationFields;

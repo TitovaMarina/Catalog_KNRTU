@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Catalog
 {
     //простенький класс для бинда данных (в шаблонах gridcolumn забинжены поля этого класса)
